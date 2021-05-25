@@ -33,4 +33,11 @@ public class ProductController {
         productServiceImpl.createProduct(product);
         return product;
     }
+
+    //update a product
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public Product updateProduct(@RequestBody Product product) {
+        productServiceImpl.updateProduct(product);
+        return product;
+    }
 }

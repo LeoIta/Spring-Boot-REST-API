@@ -30,4 +30,12 @@ public class ProductServiceImpl implements ProductService{
     public void createProduct(Product product) {
         products.add(product);
     }
+
+    public void updateProduct(Product product) {
+
+        getProductById(product.getId())
+                .setName(product.getName());
+        getProductById(product.getId())
+                .setPrice(product.getPrice());
+    }
 }
