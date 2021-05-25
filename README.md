@@ -1,1 +1,33 @@
-# SpringRestApi
+<h1>Spring Boot REST API</h1>
+<table>
+  <tr>
+    <th>HTTP Method</th>
+    <th>Safe</th>
+    <th>Idempotent</th>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+    <tr>
+    <td>POST</td>
+    <td>NO</td>
+    <td>NO</td>
+  </tr>
+     <tr>
+    <td>PUT</td>
+    <td>NO</td>
+    <td>YES</td>
+  </tr>
+   <tr>
+    <td>PATCH</td>
+    <td>NO</td>
+    <td>NO</td>
+  </tr>
+     <tr>
+    <td>DELETE</td>
+    <td>NO</td>
+    <td>YES</td>
+  </tr>
+</table>
