@@ -4,10 +4,7 @@ import com.leoita.springBootRestApi.model.Product;
 import com.leoita.springBootRestApi.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,12 @@ public class ProductController {
     @GetMapping("/{id}")
     public Product getProduct(@PathVariable("id") Long Id) {
         return productServiceImpl.getProductById(Id);
+    }
+
+    //create new product
+    @PostMapping()
+    public Product newProduct(@RequestBody Product product) {
+        productServiceImpl.createProduct(product);
+        return product;
     }
 }

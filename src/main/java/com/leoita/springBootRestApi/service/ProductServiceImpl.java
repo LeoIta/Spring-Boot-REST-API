@@ -26,4 +26,8 @@ public class ProductServiceImpl implements ProductService{
                 .filter(product -> product.getId() == Id)
                 .findFirst().orElse(null);
     }
+
+    public void createProduct(Product product) {
+        products.add(product);
+    }
 }
