@@ -20,4 +20,10 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getProductList() {
         return this.products;
     }
+
+    public Product getProductById(Long Id) {
+        return products.stream()
+                .filter(product -> product.getId() == Id)
+                .findFirst().orElse(null);
+    }
 }
