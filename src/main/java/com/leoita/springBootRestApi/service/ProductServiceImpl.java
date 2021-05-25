@@ -16,4 +16,8 @@ public class ProductServiceImpl implements ProductService{
         products.add(new Product(2L, "mouse", 24.99));
         products.add(new Product(3L, "screen", 184.99));
     }
+
+    public List<Product> getProductList() {
+        return this.products;
+    }
 }
