@@ -38,4 +38,8 @@ public class ProductServiceImpl implements ProductService{
         getProductById(product.getId())
                 .setPrice(product.getPrice());
     }
+
+    public void deleteProductById(Long Id) {
+        products.remove(getProductById(Id));
+    }
 }

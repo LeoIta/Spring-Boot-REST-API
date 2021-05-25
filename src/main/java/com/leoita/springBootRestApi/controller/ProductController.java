@@ -58,4 +58,11 @@ public class ProductController {
         productServiceImpl.updateProduct(product);
         return product;
     }
+
+    // delete a product
+    @DeleteMapping("/{id}")
+    public String deleteProduct(@PathVariable("id") Long Id) {
+        productServiceImpl.deleteProductById(Id);
+        return "product with id "+ Id +" has been deleted";
+    }
 }
