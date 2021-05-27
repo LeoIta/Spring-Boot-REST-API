@@ -1,0 +1,4 @@
+INSERT INTO PRODUCT (name,price) VALUES
+    ('MOUSE', 29.99),
+    ('SCREEN', 1999.00),
+    ('KEYBOARD', 19.99);

@@ -33,14 +33,14 @@ public class ProductController {
     //create new product
     @PostMapping()
     public Product newProduct(@RequestBody Product product) {
-        productServiceImpl.createProduct(product);
+        productServiceImpl.createOrUpdateProduct(product);
         return product;
     }
 
     //update a product
     @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     public Product updateProduct(@RequestBody Product product) {
-        productServiceImpl.updateProduct(product);
+        productServiceImpl.createOrUpdateProduct(product);
         return product;
     }
 
@@ -55,7 +55,7 @@ public class ProductController {
                 ReflectionUtils.setField(field, product, value); //set a value to the field
             }
         });
-        productServiceImpl.updateProduct(product);
+        productServiceImpl.createOrUpdateProduct(product);
         return product;
     }
 

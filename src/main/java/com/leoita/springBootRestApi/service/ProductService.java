@@ -5,10 +5,9 @@ import com.leoita.springBootRestApi.model.Product;
 import java.util.List;
 
 public interface ProductService {
+
     List<Product> getProductList();
     Product getProductById(Long Id);
-    void createProduct(Product product);
-    void updateProduct(Product product);
+    void createOrUpdateProduct(Product product);
     void deleteProductById(Long Id);
-
 }
