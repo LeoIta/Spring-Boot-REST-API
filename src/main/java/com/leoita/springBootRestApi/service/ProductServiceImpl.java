@@ -21,8 +21,8 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findById(Id).orElse(null);
     }
 
-    public void createOrUpdateProduct(Product product) {
-        productRepository.save(product);
+    public Product createOrUpdateProduct(Product product) {
+        return productRepository.save(product);
     }
 
     public void deleteProductById(Long Id) {

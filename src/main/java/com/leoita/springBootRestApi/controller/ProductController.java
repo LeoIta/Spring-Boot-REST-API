@@ -3,7 +3,6 @@ package com.leoita.springBootRestApi.controller;
 import com.leoita.springBootRestApi.model.Product;
 import com.leoita.springBootRestApi.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +18,7 @@ public class ProductController {
     ProductServiceImpl productServiceImpl;
 
     //get all the products
-    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping
     public List<Product> getProducts() {
         return productServiceImpl.getProductList();
     }
@@ -33,15 +32,13 @@ public class ProductController {
     //create new product
     @PostMapping()
     public Product newProduct(@RequestBody Product product) {
-        productServiceImpl.createOrUpdateProduct(product);
-        return product;
+        return productServiceImpl.createOrUpdateProduct(product);
     }
 
     //update a product
-    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @PutMapping
     public Product updateProduct(@RequestBody Product product) {
-        productServiceImpl.createOrUpdateProduct(product);
-        return product;
+        return productServiceImpl.createOrUpdateProduct(product);
     }
 
     //update only needed product parameters
@@ -55,11 +52,9 @@ public class ProductController {
                 ReflectionUtils.setField(field, product, value); //set a value to the field
             }
         });
-        productServiceImpl.createOrUpdateProduct(product);
-        return product;
+        return productServiceImpl.createOrUpdateProduct(product);
     }
 
-    // delete a product
     @DeleteMapping("/{id}")
     public String deleteProduct(@PathVariable("id") Long Id) {
         productServiceImpl.deleteProductById(Id);
